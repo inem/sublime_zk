@@ -54,7 +54,7 @@ class ZkConstants:
         return r"(?<=\s)(?<!`)(" + prefix + r"+([^" + prefix + r"\s.,\/!$%\^&\*;{}\[\]'\"=`~()<>”\\]|:[a-zA-Z0-9])+)"
 
     # match note links in text
-    Link_Matcher = re.compile('(\[+|§)([0-9.]{12,18})(\]+|.?)')
+    Link_Matcher = re.compile('(\[+|§)([0-9a-z.]{12,25})(\]+|.?)')
     # Above RE doesn't really care about closing ] andymore
     # This works in our favour so we support [[201711122259 This is a note]]
     # when expanding overview notes
