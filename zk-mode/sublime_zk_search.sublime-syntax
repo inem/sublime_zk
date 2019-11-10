@@ -1336,8 +1336,8 @@ contexts:
         '2': support.function.footnote.markdown
         '3': support.function.footnote.markdown
         '4': punctuation.definition.footnote.begin.markdown
-    # a [201701010202] note link
-    - match: '([\[]?\[)([0-9.]{12,18})([^]]*)(\][\]]?)'
+    # a [1a2b.201701010202] note link
+    - match: '([\[]?\[)([0-9a-z.]{12,25})([^]]*)(\][\]]?)'
       captures:
         '1': punctuation.definition.footnote.begin.markdown
         '2': markup.zettel.link

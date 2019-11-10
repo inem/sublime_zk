@@ -1009,7 +1009,7 @@ def cut_after_note_id(text):
     """
     Tries to find the 12/14 digit note ID (at beginning) in text.
     """
-    note_ids = re.findall('[0-9.]{12,18}', text)
+    note_ids = re.findall('[0-9a-z.]{12,25}', text)
     if note_ids:
         return note_ids[0]
 
@@ -1990,7 +1990,7 @@ class ZkShowAllNotesCommand(sublime_plugin.WindowCommand):
         settings = get_settings()
         extension = settings.get('wiki_extension')
         note_files = get_all_notes_for(folder, extension)
-        note_id_matcher = re.compile('[0-9.]{12,18}')
+        note_id_matcher = re.compile('[0-9a-z.]{12,25}')
         note_files = [f for f in note_files if
                       note_id_matcher.match(os.path.basename(f))]
         note_files_str = '\n'.join(note_files)
